@@ -5,6 +5,7 @@ import ClientsCoverflow from '@/components/sections/ClientsCoverflow';
 import Services from '@/components/sections/Services';
 import Statistics from '@/components/sections/Statistics';
 import Workshops from '@/components/sections/Workshops';
+import Leadership from '@/components/sections/Leadership';
 import LatestNews from '@/components/sections/LatestNews';
 import Footer from '@/components/layout/Footer';
 import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
@@ -40,6 +41,10 @@ export default function Home() {
 
         <FlowSection aria-label="Training and workshops">
           <Workshops />
+        </FlowSection>
+
+        <FlowSection aria-label="Our leadership">
+          <Leadership />
         </FlowSection>
 
         <FlowSection aria-label="Latest news">
