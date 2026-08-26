@@ -3,12 +3,14 @@
  * Do not replace with placeholder content.
  */
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const BRAND = {
   name: 'Smart Investment Gateway',
   short: 'SIG',
   tagline: 'Oman… opening doors for opportunities',
-  logo: 'https://www.omaninvestgateway.com/wp-content/uploads/2021/04/SIG_logo_large_header.svg',
-  heroVideo: 'https://www.omaninvestgateway.com/wp-content/uploads/2021/04/video-4.mp4',
+  logo: `${basePath}/logos/SIG_logo.svg`,
+  heroVideo: `${basePath}/video-4.mp4`,
   site: 'https://www.omaninvestgateway.com',
 };
 

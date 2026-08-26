@@ -7,16 +7,15 @@ import ScrollExpandMedia, {
 } from '@/components/ui/scroll-expansion-hero';
 import { Arrow } from '@/components/ui/primitives';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 /* SIG brand film, already used by the previous hero. */
-const HERO_VIDEO =
-  'https://www.omaninvestgateway.com/wp-content/uploads/2021/04/video-4.mp4';
+const HERO_VIDEO = `${basePath}/video-4.mp4`;
 
 /* Backdrop behind the collapsed card, and the video's poster frame.
    Replace with a local asset in /public once brand imagery is available. */
-const HERO_BACKDROP =
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1920&auto=format&fit=crop';
-const HERO_POSTER =
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1280&auto=format&fit=crop';
+const HERO_BACKDROP = `${basePath}/hero-backdrop.jpg`;
+const HERO_POSTER = `${basePath}/hero-poster.jpg`;
 
 const ScrollHeroContent = () => {
   const { showContent } = useScrollHero();

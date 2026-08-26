@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { SectionLabel, Tilt, Counter } from '@/components/ui/primitives';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const StrategicIntro = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.25 });
 
@@ -144,10 +146,10 @@ const StrategicIntro = () => {
                     loop
                     playsInline
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1280&auto=format&fit=crop"
+                    poster={`${basePath}/hero-poster.jpg`}
                   >
                     <source
-                      src="https://www.omaninvestgateway.com/wp-content/uploads/2021/04/video-4.mp4"
+                      src={`${basePath}/video-4.mp4`}
                       type="video/mp4"
                     />
                   </video>
