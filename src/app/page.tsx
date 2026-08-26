@@ -43,12 +43,12 @@ export default function Home() {
           <Workshops />
         </FlowSection>
 
-        <FlowSection aria-label="Our leadership">
-          <Leadership />
-        </FlowSection>
 
         <FlowSection aria-label="Latest news">
           <LatestNews />
+        </FlowSection>
+        <FlowSection aria-label="Our leadership">
+          <Leadership />
         </FlowSection>
       </FlowArt>
 
