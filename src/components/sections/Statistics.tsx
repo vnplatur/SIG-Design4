@@ -90,7 +90,7 @@ const Statistics = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-500/20 to-transparent" />
       </div>
 
-      <div className="container-max relative z-10">
+      <div className="shell relative z-10">
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto overflow-hidden">
           <motion.p

@@ -23,7 +23,7 @@ const ClientsMarquee = () => {
 
   return (
     <section className="py-20 md:py-24 bg-gradient-to-r from-primary-900 to-primary-900/90">
-      <div className="container-max">
+      <div className="shell">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <p className="text-accent-500 text-sm font-semibold uppercase tracking-widest mb-2">
