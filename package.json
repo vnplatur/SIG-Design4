@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && node scripts/postbuild.js",
     "deploy": "gh-pages -d out --dotfiles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
