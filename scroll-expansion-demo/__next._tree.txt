@@ -1,2 +1,2 @@
 :HL["/SIG-Design4/_next/static/chunks/1o0px02zde3p0.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"scroll-expansion-demo","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"sntHsfryqlrR6e07bmzvb"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"scroll-expansion-demo","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"oSAoX1hYNZBij-TVdOa-y"}
