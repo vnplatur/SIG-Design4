@@ -8,6 +8,11 @@ const nextConfig = {
   // 2. Prepend repository name in production (keeps local dev on '/')
   basePath: isProd ? '/SIG-Design4' : '',
 
+  // 3. Inject basePath into client-side bundle so process.env.NEXT_PUBLIC_BASE_PATH works
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/SIG-Design4' : '',
+  },
+
   reactStrictMode: true,
 
   // 3. Disable image resizing server in production (required for static hosting)
