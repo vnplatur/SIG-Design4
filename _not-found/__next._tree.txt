@@ -1,2 +1,2 @@
-:HL["/SIG-Design4/_next/static/chunks/0hjgjwb342fm4.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"ro04092_V_pWKTtwIFqDN"}
+:HL["/SIG-Design4/_next/static/chunks/287_4x98znuts.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"ptQ7p70Ek-FqP4CbX7pHa"}
