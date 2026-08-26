@@ -16,17 +16,15 @@ import LogoMarquee from '@/components/ui/logo-marquee';
   vector paths — so its company name could not be verified. It is labelled by
   ticker until confirmed. Replace `name` below with the correct company.
 */
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 const CLIENT_LOGOS: CarouselItem[] = [
-  { titleLine1: 'Bank Muscat', img: `${basePath}/logos/BKMB.OM_BIG.svg` },
-  { titleLine1: 'Omantel', img: `${basePath}/logos/OTEL.OM.svg` },
-  { titleLine1: 'National Bank of Oman', img: `${basePath}/logos/NBOB.OM_BIG.svg` },
-  { titleLine1: 'Bank Dhofar', img: `${basePath}/logos/BKDB.OM_BIG.svg` },
-  { titleLine1: 'Sohar International', img: `${basePath}/logos/BKSB.OM_BIG.svg` },
-  { titleLine1: 'Ahli Bank', img: `${basePath}/logos/ABOB.OM_BIG.svg` },
-  { titleLine1: 'OQ Gas Networks', img: `${basePath}/logos/OQGN.OM.svg` },
-  { titleLine1: 'ASCO', img: `${basePath}/logos/ASCO.OM_BIG.svg` },
+  { titleLine1: 'Bank Muscat', img: '/logos/BKMB.OM_BIG.svg' },
+  { titleLine1: 'Omantel', img: '/logos/OTEL.OM.svg' },
+  { titleLine1: 'National Bank of Oman', img: '/logos/NBOB.OM_BIG.svg' },
+  { titleLine1: 'Bank Dhofar', img: '/logos/BKDB.OM_BIG.svg' },
+  { titleLine1: 'Sohar International', img: '/logos/BKSB.OM_BIG.svg' },
+  { titleLine1: 'Ahli Bank', img: '/logos/ABOB.OM_BIG.svg' },
+  { titleLine1: 'OQ Gas Networks', img: '/logos/OQGN.OM.svg' },
+  { titleLine1: 'ASCO', img: '/logos/ASCO.OM_BIG.svg' },
 ];
 
 const ClientsCoverflow = () => {
