@@ -92,20 +92,6 @@ export function LogoMarquee({
           style={{ background: `linear-gradient(270deg, ${fadeColor}, transparent)` }}
         />
       </div>
-
-      {/* WCAG 2.2.2: moving content lasting over 5s needs a real stop mechanism.
-          Hover/focus pausing alone is not reachable for every input method. */}
-      <div className="mt-3 flex justify-center">
-        <button
-          type="button"
-          onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? 'Resume scrolling logos' : 'Pause scrolling logos'}
-          className="inline-flex h-8 items-center gap-2 rounded-full border border-white/30 px-3 text-xs font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-        >
-          {paused ? <PlayIcon /> : <PauseIcon />}
-          <span>{paused ? 'Resume' : 'Pause'}</span>
-        </button>
-      </div>
     </div>
   );
 }

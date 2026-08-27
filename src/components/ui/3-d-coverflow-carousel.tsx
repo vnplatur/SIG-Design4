@@ -238,8 +238,6 @@ export function CoverFlowCarousel({
       aria-roledescription="carousel"
       aria-label={sectionLabel || "Carousel"}
       onKeyDown={handleKeyDown}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -358,6 +356,8 @@ export function CoverFlowCarousel({
                 aria-hidden={!isCenter}
                 inert={!isCenter}
                 onClick={() => !isCenter && goToSlide(idx)}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
                 style={{
                   position: "absolute",
                   width: isLogo ? "360px" : "330px",
@@ -661,31 +661,6 @@ export function CoverFlowCarousel({
               />
             </button>
           ))}
-
-          {total > 1 && (
-            <button
-              type="button"
-              onClick={() => setIsPlaying((p) => !p)}
-              aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
-              style={{
-                marginLeft: "10px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "32px",
-                width: "32px",
-                borderRadius: "50%",
-                border: controlsOnDark
-                  ? "1px solid rgba(255,255,255,0.35)"
-                  : "1px solid rgba(10,20,40,0.25)",
-                backgroundColor: "transparent",
-                color: controlsOnDark ? "#ffffff" : "#0a1428",
-                cursor: "pointer",
-              }}
-            >
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            </button>
-          )}
         </div>
       </div>
     </section>

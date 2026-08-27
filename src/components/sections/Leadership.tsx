@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -16,28 +16,28 @@ const TEAM = [
     title: 'Chief Executive Officer',
     bio: 'Expert strategist in business and geo-economic affairs. Specialises in FDI, international economics, and global market dynamics.',
     image: 'https://www.omaninvestgateway.com/wp-content/uploads/2025/12/Busaidi300x300.png',
-    linkedin: '#',
+    linkedin: 'https://www.omaninvestgateway.com/our-team/',
   },
   {
     name: 'Al-Yaqadhan Al-Shukaili',
     title: 'R&D and Business Developer',
     bio: 'Logistics Engineer and Lean Six Sigma practitioner. Worked with ASYAD, DHL, and DSV. Represents SIG at high-level economic events.',
     image: 'https://www.omaninvestgateway.com/wp-content/uploads/2025/12/Al-Yaqadan1.png',
-    linkedin: '#',
+    linkedin: 'https://www.omaninvestgateway.com/our-team/',
   },
   {
     name: 'Prashant Soni',
     title: 'Business Analyst',
     bio: 'Specialist in macroeconomic research, data analysis, and investment intelligence reporting. Skilled in SQL, Power BI, and Excel.',
     image: 'https://www.omaninvestgateway.com/wp-content/uploads/2025/12/Prashant-1-298x300.png',
-    linkedin: '#',
+    linkedin: 'https://www.omaninvestgateway.com/our-team/',
   },
   {
     name: 'Hussam Daqamsih',
     title: 'Economic Researcher & Data Analyst',
     bio: 'Delivers data-driven economic insights through macro and microeconomic research, advanced data analysis, and stakeholder reporting.',
     image: 'https://www.omaninvestgateway.com/wp-content/uploads/2026/01/Hussam1-298x300.png',
-    linkedin: '#',
+    linkedin: 'https://www.omaninvestgateway.com/our-team/',
   },
 ];
 
@@ -121,44 +121,62 @@ export default function Leadership() {
             <motion.div
               key={member.name}
               variants={cardVariants}
-              className="group relative rounded-2xl overflow-hidden bg-slate-50/60 border border-slate-100/80 hover:bg-white hover:border-[color:var(--teal-500)]/30 hover:shadow-[0_12px_32px_-4px_rgba(15,23,42,0.08)] transition-all duration-300"
+              whileHover={{ y: -8 }}
+              className="group relative h-[380px] bg-white border border-slate-100 shadow-md hover:border-[color:var(--teal-500)]/30 hover:shadow-2xl hover:shadow-teal-500/10 rounded-2xl overflow-hidden flex flex-col justify-between p-6 transition-[border-color,box-shadow] duration-300 ease-out text-center"
             >
-              {/* Photo Area with aspect-square to fit headshots perfectly */}
-              <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+              {/* Decorative mesh profile backing */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-tr from-[color:var(--teal-500)]/5 via-transparent to-[color:var(--teal-500)]/3 pointer-events-none" />
+
+              {/* Avatar Circle in normal flex flow */}
+              <div className="relative z-10 w-28 h-28 rounded-full border border-slate-200 overflow-hidden flex items-center justify-center bg-slate-100 shadow-inner transition-all duration-500 group-hover:border-[color:var(--teal-500)]/40 mx-auto shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
+              </div>
+
+              {/* Card info text wrapper */}
+              <div className="relative z-10 flex-1 flex flex-col justify-center mt-4">
+                <h3 className="text-sm font-bold text-[color:var(--navy-900)] group-hover:text-[color:var(--teal-600)] transition-colors mb-1 leading-snug">
+                  {member.name}
+                </h3>
+                <p className="text-xs text-[color:var(--teal-600)] font-semibold tracking-wider uppercase mb-3">
+                  {member.title}
+                </p>
                 
-                {/* Modern Fade Overlay */}
-                <div className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 z-10">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                    <p className="text-xs text-slate-200 leading-relaxed line-clamp-5 mb-4">{member.bio}</p>
-                    {member.linkedin !== '#' && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400 hover:text-teal-300 transition-colors"
-                      >
-                        View Profile
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
+                {/* Subtle Bio */}
+                <p className="text-[11px] text-[color:var(--grey-500)] leading-relaxed h-14 overflow-hidden opacity-90 group-hover:opacity-100 transition-all duration-300">
+                  {member.bio}
+                </p>
+              </div>
+
+              {/* View Profile area with hover button slide-up (zero height/space at rest) */}
+              <div className="h-0 opacity-0 group-hover:h-10 group-hover:opacity-100 mt-0 group-hover:mt-3 pt-0 group-hover:pt-3 border-t border-transparent group-hover:border-slate-100/60 transition-all duration-300 ease-out relative flex items-center justify-center overflow-hidden shrink-0">
+                <div className="flex items-center justify-center w-full h-full">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[color:var(--teal-500)] text-white hover:bg-[color:var(--teal-600)] text-xs font-bold rounded-full transition-colors duration-300 shadow-sm shadow-teal-500/20"
+                  >
+                    View Profile
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </a>
                 </div>
               </div>
 
-              {/* Text Area */}
-              <div className="p-5">
-                <div className="w-8 h-0.5 bg-[color:var(--teal-400)] mb-3 transition-all duration-300 group-hover:w-12" />
-                <h3 className="text-sm font-bold text-[color:var(--navy-900)] leading-snug group-hover:text-[color:var(--teal-600)] transition-colors duration-300">{member.name}</h3>
-                <p className="mt-1 text-xs text-[color:var(--teal-600)] font-semibold uppercase tracking-wider">{member.title}</p>
-              </div>
+              {/* Full-card link overlay - only active on mobile/touch screens */}
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="absolute inset-0 z-20 md:hidden"
+                aria-label={`View ${member.name} profile`}
+              />
             </motion.div>
           ))}
         </motion.div>

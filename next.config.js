@@ -1,23 +1,25 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
+const isVercel = process.env.VERCEL === '1';
+const isGithubPages = isProd && !isVercel;
 
 const nextConfig = {
-  // 1. Enable static export only in production (keeps local dev running on node server)
-  ...(isProd ? { output: 'export' } : {}),
+  // 1. Enable static export only for GitHub Pages (keeps Vercel and local dev running on node server)
+  ...(isGithubPages ? { output: 'export' } : {}),
 
-  // 2. Prepend repository name in production (keeps local dev on '/')
-  basePath: isProd ? '/SIG-Design4' : '',
+  // 2. Prepend repository name only on GitHub Pages (keeps Vercel and local dev on '/')
+  basePath: isGithubPages ? '/SIG-Design4' : '',
 
   // 3. Inject basePath into client-side bundle so process.env.NEXT_PUBLIC_BASE_PATH works
   env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? '/SIG-Design4' : '',
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? '/SIG-Design4' : '',
   },
 
   reactStrictMode: true,
 
-  // 3. Disable image resizing server in production (required for static hosting)
+  // 3. Disable image resizing server only on GitHub Pages (required for static hosting)
   images: {
-    unoptimized: isProd,
+    unoptimized: isGithubPages,
     remotePatterns: [
       {
         protocol: 'https',
@@ -31,8 +33,8 @@ const nextConfig = {
     ],
   },
 
-  // 4. Enable API headers only in development (static export does not support headers)
-  ...(!isProd
+  // 4. Enable API headers on development and Vercel (static export on GitHub Pages does not support headers)
+  ...(!isGithubPages
     ? {
         headers: async () => [
           {
