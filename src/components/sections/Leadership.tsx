@@ -122,13 +122,13 @@ export default function Leadership() {
               key={member.name}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group relative h-[380px] bg-white border border-slate-100 shadow-md hover:border-[color:var(--teal-500)]/30 hover:shadow-2xl hover:shadow-teal-500/10 rounded-2xl overflow-hidden flex flex-col justify-between p-6 transition-[border-color,box-shadow] duration-300 ease-out text-center"
+              className="group relative h-[380px] bg-white border border-slate-100 shadow-md hover:border-[color:var(--teal-500)]/30 hover:shadow-2xl hover:shadow-teal-500/10 rounded-2xl overflow-hidden flex flex-col items-center justify-start p-6 pt-8 transition-[border-color,box-shadow] duration-300 ease-out text-center"
             >
               {/* Decorative mesh profile backing */}
               <div className="absolute inset-0 z-0 bg-gradient-to-tr from-[color:var(--teal-500)]/5 via-transparent to-[color:var(--teal-500)]/3 pointer-events-none" />
 
-              {/* Avatar Circle in normal flex flow */}
-              <div className="relative z-10 w-28 h-28 rounded-full border border-slate-200 overflow-hidden flex items-center justify-center bg-slate-100 shadow-inner transition-all duration-500 group-hover:border-[color:var(--teal-500)]/40 mx-auto shrink-0">
+              {/* Avatar Circle in normal flex flow - GPU Accelerated slide-up */}
+              <div className="relative z-10 w-28 h-28 rounded-full border border-slate-200 overflow-hidden flex items-center justify-center bg-slate-100 shadow-inner transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-2 transform-gpu will-change-transform shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -137,8 +137,8 @@ export default function Leadership() {
                 />
               </div>
 
-              {/* Card info text wrapper */}
-              <div className="relative z-10 flex-1 flex flex-col justify-center mt-4">
+              {/* Card info text wrapper - GPU Accelerated slide-up */}
+              <div className="relative z-10 flex-1 flex flex-col justify-start mt-6 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-4 transform-gpu will-change-transform">
                 <h3 className="text-sm font-bold text-[color:var(--navy-900)] group-hover:text-[color:var(--teal-600)] transition-colors mb-1 leading-snug">
                   {member.name}
                 </h3>
@@ -152,9 +152,9 @@ export default function Leadership() {
                 </p>
               </div>
 
-              {/* View Profile area with hover button slide-up (zero height/space at rest) */}
-              <div className="h-0 opacity-0 group-hover:h-10 group-hover:opacity-100 mt-0 group-hover:mt-3 pt-0 group-hover:pt-3 border-t border-transparent group-hover:border-slate-100/60 transition-all duration-300 ease-out relative flex items-center justify-center overflow-hidden shrink-0">
-                <div className="flex items-center justify-center w-full h-full">
+              {/* View Profile area - GPU Accelerated fade and slide-up */}
+              <div className="absolute bottom-6 left-6 right-6 z-10 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none group-hover:pointer-events-auto transform-gpu will-change-[transform,opacity]">
+                <div className="border-t border-slate-100/60 pt-4 flex items-center justify-center w-full">
                   <a
                     href={member.linkedin}
                     target="_blank"

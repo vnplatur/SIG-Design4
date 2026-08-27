@@ -257,23 +257,6 @@ export function FeatureSteps({
         </div>
       </div>
 
-      {/* Playback control — auto-advancing content needs a real stop. */}
-      {total > 1 && (
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => setIsPlaying((p) => !p)}
-            aria-label={isPlaying ? 'Pause auto-advance' : 'Resume auto-advance'}
-            className="inline-flex h-9 items-center gap-2 rounded-full border border-[color:var(--grey-300)] px-4 text-xs font-medium text-[color:var(--grey-600)] transition-colors hover:bg-white"
-          >
-            {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            <span>{isPlaying ? 'Pause' : 'Play'}</span>
-          </button>
-          <p aria-live="polite" className="sr-only">
-            {`Item ${current + 1} of ${total}: ${active.title}`}
-          </p>
-        </div>
-      )}
     </div>
   );
 }
